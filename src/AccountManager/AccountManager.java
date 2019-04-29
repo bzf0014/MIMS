@@ -17,25 +17,25 @@ public class AccountManager {
         Account user;
         switch (aT) {
             case Admin:
-                user = new Admin(username, password);
+                user = new Admin(aT, username, password);
                 break;
             case LabTech:
-                user = new LabTech(username, password);
+                user = new LabTech(aT, username, password);
                 break;
             case Pharmacist:
-                user = new Pharmacist(username, password);
+                user = new Pharmacist(aT, username, password);
                 break;
             case Radiologist:
-                user = new Radiologist(username, password);
+                user = new Radiologist(aT, username, password);
                 break;
             case Doctor:
-                user = new Doctor(username, password);
+                user = new Doctor(aT, username, password);
                 break;
             case Receptionist:
-                user = new Receptionist(username, password);
+                user = new Receptionist(aT, username, password);
                 break;
             case Nurse:
-                user = new Nurse(username, password);
+                user = new Nurse(aT, username, password);
                 break;
             default:
                 return false;

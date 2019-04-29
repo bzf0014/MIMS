@@ -7,10 +7,10 @@ public abstract class Account {
     public AccountType accountType;
 
     public enum AccountType {
-        Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse;
+        Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse
     }
 
-    public Account(String username, String password) {
+    public Account(AccountType accountType, String username, String password) {
         this.username = username;
         this.password = password;
     }

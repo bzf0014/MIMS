@@ -4,9 +4,8 @@ import Accounts.Account;
 
 public class MedicalPersonnel extends Account {
 
-
-    public MedicalPersonnel(String username, String password) {
-        super(username, password);
+    public MedicalPersonnel(AccountType accountType, String username, String password) {
+        super(accountType, username, password);
     }
 
 }

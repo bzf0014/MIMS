@@ -4,7 +4,7 @@ import Accounts.Account;
 
 public class ClericalWorker extends Account {
 
-    public ClericalWorker(String username, String password) {
-        super(username, password);
+    public ClericalWorker(AccountType accountType, String username, String password) {
+        super(accountType, username, password);
     }
 }

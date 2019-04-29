@@ -2,8 +2,8 @@ package Accounts.MedicalPersonnel;
 
 public class Doctor extends MedicalPersonnel {
 
-    public Doctor(String username, String password) {
-        super(username, password);
+    public Doctor(AccountType accountType, String username, String password) {
+        super(accountType, username, password);
     }
 
 }

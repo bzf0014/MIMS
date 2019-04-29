@@ -1,7 +1,8 @@
 package Accounts.MedicalPersonnel;
 
 public class Radiologist extends MedicalPersonnel {
-    public Radiologist(String username, String password) {
-        super(username, password);
+
+    public Radiologist(AccountType accountType, String username, String password) {
+        super(accountType, username, password);
     }
 }
