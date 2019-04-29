@@ -1,7 +1,6 @@
 package AccountManager;
 import java.util.ArrayList;
 import Accounts.*;
-import Accounts.ClericalWorker.*;
 import Accounts.MedicalPersonnel.*;
 
 
@@ -48,16 +47,14 @@ public class AccountManager {
         return true;
     }
 
-    public boolean addPrescription() {
-        return true;
-    }
-
-    public boolean sendResultForm() {
-        return true;
-    }
-
     public boolean delete(Account acc) {
-        return accountArray.remove(acc);
+        for (Account a : accountArray){
+            if (a == acc) {
+                accountArray.remove(a);
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean verifyCredentials() {

@@ -1,6 +1,8 @@
 package Accounts.MedicalPersonnel;
 
-public class Nurse extends MedicalPersonnel {
+import Accounts.Account;
+
+public class Nurse extends Account {
 
     public Nurse(AccountType accountType, String username, String password) {
         super(accountType, username, password);
