@@ -1,3 +1,5 @@
+package Accounts;
+
 public abstract class Account {
 
     public String username;
@@ -5,7 +7,7 @@ public abstract class Account {
     public Permission permission;
 
     public enum Permission {
-        fullAccess, viewAccess, restrictedAccess;
+        fullAccess, viewAccess, clientFacing ,none;
 
     }
 
