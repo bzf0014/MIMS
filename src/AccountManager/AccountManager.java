@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import Accounts.*;
+import Accounts.ClericalWorker.*;
+import Accounts.MedicalPersonnel.*;
 
 public class AccountManager {
 
@@ -12,7 +15,7 @@ public class AccountManager {
         return true;
     }
 
-    public boolean addUser(AccountType aT, String username, String password, Permission permission) {
+    public boolean addUser(AccountType aT, String username, String password, Account.Permission permission) {
         switch (aT) {
             case Admin:
                 Admin user = new Admin();
