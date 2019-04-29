@@ -4,8 +4,7 @@ import Accounts.Account;
 
 public class ClericalWorker extends Account {
 
-    public ClericalWorker(Permission permission, String username, String password) {
-        super(permission, username, password);
-        this.permission = Permission.clientFacing;
+    public ClericalWorker(AccountType accountType, String username, String password) {
+        super(accountType, username, password);
     }
 }

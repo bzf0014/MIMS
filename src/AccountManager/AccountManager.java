@@ -1,44 +1,47 @@
+package AccountManager;
 import java.util.ArrayList;
+import Accounts.*;
+import Accounts.ClericalWorker.*;
+import Accounts.MedicalPersonnel.*;
+
 
 public class AccountManager {
 
-    ArrayList<Account> accountArray = new ArrayList<Account>();
-
-    enum AccountType {
-        Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse;
-    }
+    private ArrayList<Account> accountArray = new ArrayList<Account>();
 
     public boolean sendMessage() {
         return true;
     }
 
-    public boolean addUser(AccountType aT, String username, String password, Permission permission) {
+    public boolean createUser(Account.AccountType aT, String username, String password) {
+        Account user;
         switch (aT) {
             case Admin:
-                Admin user = new Admin();
+                user = new Admin(aT, username, password);
                 break;
             case LabTech:
-                LabTech user = new LabTech();
+                user = new LabTech(aT, username, password);
                 break;
             case Pharmacist:
-                Pharmacist user = new Pharmacist();
+                user = new Pharmacist(aT, username, password);
                 break;
             case Radiologist:
-                Radiologist user = new Radiologist();
+                user = new Radiologist(aT, username, password);
                 break;
             case Doctor:
-                Doctor user = new Doctor();
+                user = new Doctor(aT, username, password);
                 break;
             case Receptionist:
-                Receptionist user = new Receptionist();
+                user = new Receptionist(aT, username, password);
                 break;
             case Nurse:
-                Nurse user = new Nurse();
+                user = new Nurse(aT, username, password);
                 break;
             default:
                 return false;
-                break;
         }
+        accountArray.add(user);
+        return true;
     }
 
     public boolean addRequest() {
@@ -65,8 +68,8 @@ public class AccountManager {
 
     }
 
-    public void instance() {
-
+    public AccountManager instance() {
+        return this;
     }
 
 

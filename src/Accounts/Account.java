@@ -4,14 +4,13 @@ public abstract class Account {
 
     public String username;
     public String password;
-    public Permission permission;
+    public AccountType accountType;
 
-    public enum Permission {
-        fullAccess, viewAccess, clientFacing ,none;
-
+    public enum AccountType {
+        Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse
     }
 
-    public Account(Permission permission, String username, String password) {
+    public Account(AccountType accountType, String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -32,12 +31,12 @@ public abstract class Account {
         this.password = password;
     }
 
-    public Permission getPermission() {
-        return permission;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setPermission(Permission permission) {
-        this.permission = permission;
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 }
 
