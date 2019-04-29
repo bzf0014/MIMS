@@ -1,8 +1,10 @@
 package Accounts.ClericalWorker;
 
-public class Receptionist extends ClericalWorker {
+import Accounts.Account;
 
-    public Receptionist(AccountType accountType, String username, String password) {
-        super(accountType, username, password);
+public class Receptionist extends Account {
+
+    public Receptionist(String username, String password) {
+        super(AccountType.Receptionist, username, password);
     }
 }

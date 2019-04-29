@@ -1,10 +1,14 @@
 package Accounts;
 
+import java.util.ArrayList;
+
 public abstract class Account {
 
     public String username;
     public String password;
     public AccountType accountType;
+    public Boolean loggedIn = false;
+    public String presciption;
 
     public enum AccountType {
         Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse
@@ -13,6 +17,7 @@ public abstract class Account {
     public Account(AccountType accountType, String username, String password) {
         this.username = username;
         this.password = password;
+        this.loggedIn = false;
     }
 
     public String getUsername() {

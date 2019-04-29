@@ -4,8 +4,8 @@ import Accounts.Account;
 
 public class Doctor extends Account {
 
-    public Doctor(AccountType accountType, String username, String password) {
-        super(accountType, username, password);
+    public Doctor(String username, String password) {
+        super(AccountType.Doctor, username, password);
     }
 
     public boolean addPrescription() {

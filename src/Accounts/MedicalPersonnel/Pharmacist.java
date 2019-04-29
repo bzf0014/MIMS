@@ -4,7 +4,7 @@ import Accounts.Account;
 
 public class Pharmacist extends Account {
 
-    public Pharmacist(AccountType accountType, String username, String password) {
-        super(accountType, username, password);
+    public Pharmacist(String username, String password) {
+        super(AccountType.Pharmacist, username, password);
     }
 }
