@@ -1,46 +1,53 @@
 package AccountManager;
 import java.util.ArrayList;
 import Accounts.*;
+import Accounts.ClericalWorker.*;
 import Accounts.MedicalPersonnel.*;
 
 
 public class AccountManager {
 
     private ArrayList<Account> accountArray = new ArrayList<Account>();
+    public Account currentUser;
 
     public boolean sendMessage() {
         return true;
     }
 
     public boolean createUser(Account.AccountType aT, String username, String password) {
-        Account user;
+        //Account user = null;
         switch (aT) {
             case Admin:
-                user = new Admin(aT, username, password);
-                break;
+                Admin userA = new Admin(username, password);
+                accountArray.add(userA);
+                return true;
             case LabTech:
-                user = new LabTech(aT, username, password);
-                break;
+                LabTech userB = new LabTech(username, password);
+                accountArray.add(userB);
+                return true;
             case Pharmacist:
-                user = new Pharmacist(aT, username, password);
-                break;
+                Pharmacist userC = new Pharmacist(username, password);
+                accountArray.add(userC);
+                return true;
             case Radiologist:
-                user = new Radiologist(aT, username, password);
-                break;
+                Radiologist userD = new Radiologist(username, password);
+                accountArray.add(userD);
+                return true;
             case Doctor:
-                user = new Doctor(aT, username, password);
-                break;
+                Doctor userE = new Doctor(username, password);
+                accountArray.add(userE);
+                return true;
             case Receptionist:
-                user = new Receptionist(aT, username, password);
-                break;
+                Receptionist userF = new Receptionist(username, password);
+                accountArray.add(userF);
+                return true;
             case Nurse:
-                user = new Nurse(aT, username, password);
-                break;
+                Nurse userG = new Nurse(username, password);
+                accountArray.add(userG);
+                return true;
             default:
                 return false;
         }
-        accountArray.add(user);
-        return true;
     }
 
     public boolean addRequest() {
@@ -57,8 +64,17 @@ public class AccountManager {
         return false;
     }
 
-    public boolean verifyCredentials() {
-        return true;
+    public boolean verifyCredentials(String un, String pw) {
+      for (int i = 0; i < accountArray.size(); i++) {
+          if (accountArray.get(i).username.equals(un) && accountArray.get(i).password.equals(pw)) {
+              currentUser = accountArray.get(i);
+              return true;
+          }
+          else {
+              return false;
+          }
+      }
+      return false;
     }
 
     public void getInbox(Account acc) {

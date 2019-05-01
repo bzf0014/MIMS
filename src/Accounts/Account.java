@@ -1,5 +1,7 @@
 package Accounts;
 
+import Inbox.Inbox;
+
 import java.util.ArrayList;
 
 public abstract class Account {
@@ -9,6 +11,7 @@ public abstract class Account {
     public AccountType accountType;
     public Boolean loggedIn = false;
     public String presciption;
+    public Inbox inbox;
 
     public enum AccountType {
         Admin, LabTech, Pharmacist, Radiologist, Doctor, Receptionist, Nurse
@@ -42,6 +45,14 @@ public abstract class Account {
 
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
+    }
+
+    public Inbox getInbox() {
+        return inbox;
+    }
+
+    public void setInbox(Inbox inbox) {
+        this.inbox = inbox;
     }
 }
 
