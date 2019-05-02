@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import Record.*
  
 public class RecordManager {
 	private static Map map = new HashMap<>();
